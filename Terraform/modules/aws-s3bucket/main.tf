@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "project-s3bucket" {
-  bucket = "emanealotaiefeah90-project-s3bucket" //Change the name of the S3Bucket here to be unique (All small letters) ///
+  bucket = "emanealotaiefeah90y-project-s3bucket" //Change the name of the S3Bucket here to be unique (All small letters) ///
   force_destroy = true
 
   tags = {

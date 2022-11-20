@@ -1,14 +1,14 @@
 pipeline {
     agent any
     environment {
-        AWS_S3_BUCKET = "emanealotaiefeah90-project-s3bucket" // Change the name of the S3Bucket here to match the one in the aws-s3bucket Terraform Module ///
+        AWS_S3_BUCKET = "emanealotaiefeahy-project-s3bucket" // Change the name of the S3Bucket here to match the one in the aws-s3bucket Terraform Module ///
         ARTIFACT_NAME = "duihua.war"
         AWS_EB_APP_NAME = "Elasticbeanstalk-app" // This have to match the app name in the aws-elasticbeanstalk-cloudfront Terraform Module 
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Elasticbeanstalk-env" // This have to match the env name in the aws-elasticbeanstalk-cloudfront Terraform Module
-        SONAR_IP = "18.209.173.82" // Change this IP to the ec2 IP Address outputted in the beginning (Sonarqube Server) ///
+        SONAR_IP = "34.207.204.134" // Change this IP to the ec2 IP Address outputted in the beginning (Sonarqube Server) ///
         SONAR_PROJECT = "duha" // Set your Sonarqube project name ///
-        SONAR_TOKEN = "686041bea504b4bc1838fecd2119ffcdb977ebb2" // Set your Sonarqube Token ///
+        SONAR_TOKEN = "89c3084ceb91b1c68873fa55afe8cf9f106063ae" // Set your Sonarqube Token ///
     }
     stages {
         stage('Validate') {
@@ -70,12 +70,12 @@ pipeline {
                 sh 'aws elasticbeanstalk update-environment --application-name $AWS_EB_APP_NAME --environment-name $AWS_EB_ENVIRONMENT --version-label $AWS_EB_APP_VERSION'
             }
          }
-        stage ("terraform apply cloudfront") {
-            steps {
-                sh ('terraform -chdir=Terraform/modules/aws-elasticbeanstalk-cloudfront destroy -target="aws_cloudfront_distribution.distribution" --auto-approve')
-                sh ('terraform -chdir=Terraform/modules/aws-elasticbeanstalk-cloudfront apply -target="aws_cloudfront_distribution.distribution" --auto-approve')
-           }
-        }
+        // stage ("terraform apply cloudfront") {
+        //     steps {
+        //         sh ('terraform -chdir=Terraform/modules/aws-elasticbeanstalk-cloudfront destroy -target="aws_cloudfront_distribution.distribution" --auto-approve')
+        //         sh ('terraform -chdir=Terraform/modules/aws-elasticbeanstalk-cloudfront apply -target="aws_cloudfront_distribution.distribution" --auto-approve')
+        //    }
+        // }
         
 
     }
