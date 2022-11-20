@@ -1,14 +1,14 @@
 pipeline {
     agent any
     environment {
-        AWS_S3_BUCKET = "emanealotaiefeah-project-s3bucket" // Change the name of the S3Bucket here to match the one in the aws-s3bucket Terraform Module ///
+        AWS_S3_BUCKET = "emanealotaiefeah22-project-s3bucket" // Change the name of the S3Bucket here to match the one in the aws-s3bucket Terraform Module ///
         ARTIFACT_NAME = "duihua.war"
         AWS_EB_APP_NAME = "app" // This have to match the app name in the aws-elasticbeanstalk-cloudfront Terraform Module 
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "App-env" // This have to match the env name in the aws-elasticbeanstalk-cloudfront Terraform Module
-        SONAR_IP = "54.80.4.251" // Change this IP to the ec2 IP Address outputted in the beginning (Sonarqube Server) ///
+        SONAR_IP = "204.236.251.33" // Change this IP to the ec2 IP Address outputted in the beginning (Sonarqube Server) ///
         SONAR_PROJECT = "duha" // Set your Sonarqube project name ///
-        SONAR_TOKEN = "b872ce6c13adbc2c29849bdc6573fd65cd1a1364" // Set your Sonarqube Token ///
+        SONAR_TOKEN = "e413933906042cb5816c376c1187a183759d8d71" // Set your Sonarqube Token ///
     }
     stages {
         stage('Validate') {
