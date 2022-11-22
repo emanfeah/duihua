@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        AWS_S3_BUCKET = "emanealotaiefeahy-project-s3bucket" // Change the name of the S3Bucket here to match the one in the aws-s3bucket Terraform Module ///
+        AWS_S3_BUCKET = "emanealotaiefeah90y-project-s3bucket" // Change the name of the S3Bucket here to match the one in the aws-s3bucket Terraform Module ///
         ARTIFACT_NAME = "duihua.war"
         AWS_EB_APP_NAME = "Elasticbeanstalk-app" // This have to match the app name in the aws-elasticbeanstalk-cloudfront Terraform Module 
         AWS_EB_APP_VERSION = "${BUILD_ID}"
