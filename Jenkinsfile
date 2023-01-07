@@ -6,9 +6,9 @@ pipeline {
         AWS_EB_APP_NAME = "Elasticbeanstalk-app" // This have to match the app name in the aws-elasticbeanstalk-cloudfront Terraform Module 
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Elasticbeanstalk-env" // This have to match the env name in the aws-elasticbeanstalk-cloudfront Terraform Module
-        SONAR_IP = "35.175.224.147" // Change this IP to the ec2 IP Address outputted in the beginning (Sonarqube Server) ///
+        SONAR_IP = "3.81.32.27" // Change this IP to the ec2 IP Address outputted in the beginning (Sonarqube Server) ///
         SONAR_PROJECT = "duha" // Set your Sonarqube project name ///
-        SONAR_TOKEN = "15fa6a6faf13a53bb3de9abf2d352f27e54ca821" // Set your Sonarqube Token ///
+        SONAR_TOKEN = "36590ce887cf708f046f63265efd74e9bdd9adee" // Set your Sonarqube Token ///
     }
     stages {
         stage('Validate') {
